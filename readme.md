@@ -6,7 +6,7 @@ Yolov5算法介绍，参考博客：https://blog.csdn.net/qq_40980981/article/de
 
 项目的详细介绍使用，参考博客：
 
-![mAP.png](map_out%2Fresults%2FmAP.png)
+![mAP.png](doc%2FmAP.png)
 
 ## 环境准备
 torch==1.2.0
