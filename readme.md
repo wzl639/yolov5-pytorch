@@ -6,7 +6,7 @@ Yolov5算法介绍，参考博客：https://blog.csdn.net/qq_40980981/article/de
 
 项目的详细介绍使用，参考博客：
 
-检测结果示例：
+![mAP.png](map_out%2Fresults%2FmAP.png)
 
 ## 环境准备
 torch==1.2.0
@@ -35,8 +35,19 @@ JPEGImages:这里存放的就是JPG格式的原图，包含17125张彩色图片�
 ## 模型训练
 train.py中训练配置了训练voc数据集的模型参数，直接运行python train.py即可。模型训练的结果数据会保存在--save_dir参数制定的文件中
 
+python train.py
+
 ## 模型预测
-_todo_
+predict.py模型预测脚本，支持单张图片预测、视频检测和遍历文件夹进行检测并保存,可以修改--mode参数来指定你需要预测的类型。
+比如预测单张图片，可视化显示：
+
+python predict.py --mode 'predict' --img_path './data/VOC2007/JPEGImages/2007_000027.jpg'
+
+![img.png](doc/img.png)
+
+## 模型验证
+eval.py脚本可以测试模型在VOC测试集上的性能指标，比如计算IOU阈值为0.5时的mAP:
+python eval.py --map_out_path 'map_out' --MINOVERLAP 0.5
 
 ## Reference
 https://github.com/bubbliiiing/yolov5-pytorch
